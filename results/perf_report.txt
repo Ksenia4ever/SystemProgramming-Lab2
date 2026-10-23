@@ -1,0 +1,720 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 137  of event 'cpu-clock'
+# Event count (approx.): 1383838370
+#
+# Overhead  Command  Shared Object      Symbol                                                                                         
+# ........  .......  .................  ...............................................................................................
+#
+     8.76%  program  program            [.] calculateSqrt()
+            |
+            ---calculateSqrt()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     8.03%  program  program            [.] calculateSin()
+            |
+            ---calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     6.57%  program  [kernel.kallsyms]  [k] _raw_spin_unlock_irqrestore
+            |
+            ---_raw_spin_unlock_irqrestore
+               |          
+               |--5.11%--__wake_up_sync_key
+               |          sock_def_readable
+               |          tcp_data_ready
+               |          |          
+               |          |--4.38%--tcp_rcv_established
+               |          |          tcp_v4_do_rcv
+               |          |          tcp_v4_rcv
+               |          |          ip_protocol_deliver_rcu
+               |          |          ip_local_deliver_finish
+               |          |          ip_local_deliver
+               |          |          ip_sublist_rcv_finish
+               |          |          ip_list_rcv_finish
+               |          |          ip_sublist_rcv
+               |          |          ip_list_rcv
+               |          |          __netif_receive_skb_list_core
+               |          |          netif_receive_skb_list_internal
+               |          |          napi_complete_done
+               |          |          0xffffffffc0293fab
+               |          |          __napi_poll
+               |          |          net_rx_action
+               |          |          handle_softirqs
+               |          |          __irq_exit_rcu
+               |          |          irq_exit_rcu
+               |          |          common_interrupt
+               |          |          asm_common_interrupt
+               |          |          |          
+               |          |          |--0.73%--0x7422ee97f5aa
+               |          |          |          calculateSin()
+               |          |          |          processData()
+               |          |          |          main
+               |          |          |          0x7422ee62a601
+               |          |          |          __libc_start_main
+               |          |          |          _start
+               |          |          |          
+               |          |          |--0.73%--0x7422ee97f585
+               |          |          |          calculateSin()
+               |          |          |          processData()
+               |          |          |          main
+               |          |          |          0x7422ee62a601
+               |          |          |          __libc_start_main
+               |          |          |          _start
+               |          |          |          
+               |          |          |--0.73%--0x7422ee97f3fe
+               |          |          |          calculateSin()
+               |          |          |          processData()
+               |          |          |          main
+               |          |          |          0x7422ee62a601
+               |          |          |          __libc_start_main
+               |          |          |          _start
+               |          |          |          
+               |          |          |--0.73%--0x7422ee97f304
+               |          |          |          calculateSin()
+               |          |          |          processData()
+               |          |          |          main
+               |          |          |          0x7422ee62a601
+               |          |          |          __libc_start_main
+               |          |          |          _start
+               |          |          |          
+               |          |          |--0.73%--calculateSin()
+               |          |          |          processData()
+               |          |          |          main
+               |          |          |          0x7422ee62a601
+               |          |          |          __libc_start_main
+               |          |          |          _start
+               |          |          |          
+               |          |           --0.73%--sin@plt
+               |          |                     processData()
+               |          |                     main
+               |          |                     0x7422ee62a601
+               |          |                     __libc_start_main
+               |          |                     _start
+               |          |          
+               |           --0.73%--tcp_data_queue
+               |                     tcp_rcv_established
+               |                     tcp_v4_do_rcv
+               |                     tcp_v4_rcv
+               |                     ip_protocol_deliver_rcu
+               |                     ip_local_deliver_finish
+               |                     ip_local_deliver
+               |                     ip_sublist_rcv_finish
+               |                     ip_list_rcv_finish
+               |                     ip_sublist_rcv
+               |                     ip_list_rcv
+               |                     __netif_receive_skb_list_core
+               |                     netif_receive_skb_list_internal
+               |                     napi_complete_done
+               |                     0xffffffffc0293fab
+               |                     __napi_poll
+               |                     net_rx_action
+               |                     handle_softirqs
+               |                     __irq_exit_rcu
+               |                     irq_exit_rcu
+               |                     common_interrupt
+               |                     asm_common_interrupt
+               |                     0x7422ee97f428
+               |                     calculateSin()
+               |                     processData()
+               |                     main
+               |                     0x7422ee62a601
+               |                     __libc_start_main
+               |                     _start
+               |          
+                --1.46%--try_to_wake_up
+                          wake_up_process
+                          process_timeout
+                          call_timer_fn
+                          __run_timers
+                          timer_expire_remote
+                          tmigr_handle_remote_cpu
+                          tmigr_handle_remote_up
+                          tmigr_handle_remote
+                          run_timer_softirq
+                          handle_softirqs
+                          __irq_exit_rcu
+                          irq_exit_rcu
+                          sysvec_apic_timer_interrupt
+                          asm_sysvec_apic_timer_interrupt
+                          |          
+                          |--0.73%--0x7422ee97f42e
+                          |          calculateSin()
+                          |          processData()
+                          |          main
+                          |          0x7422ee62a601
+                          |          __libc_start_main
+                          |          _start
+                          |          
+                           --0.73%--sin@plt
+                                     processData()
+                                     main
+                                     0x7422ee62a601
+                                     __libc_start_main
+                                     _start
+
+     5.84%  program  libm.so.6          [.] 0x00000000000a540b
+            |
+            ---0x7422ee97f40b
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     5.84%  program  libm.so.6          [.] 0x00000000000a55c1
+            |
+            ---0x7422ee97f5c1
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     5.84%  program  program            [.] __gnu_cxx::__enable_if<std::__is_integer<int>::__value, double>::__type std::sqrt<int>(int)
+            |
+            ---__gnu_cxx::__enable_if<std::__is_integer<int>::__value, double>::__type std::sqrt<int>(int)
+               |          
+               |--3.65%--calculateSqrt()
+               |          processData()
+               |          main
+               |          0x7422ee62a601
+               |          __libc_start_main
+               |          _start
+               |          
+                --2.19%--processData()
+                          main
+                          0x7422ee62a601
+                          __libc_start_main
+                          _start
+
+     4.38%  program  libm.so.6          [.] 0x00000000000a5432
+            |
+            ---0x7422ee97f432
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     3.65%  program  libm.so.6          [.] __sqrt_finite
+            |
+            ---__sqrt_finite
+               calculateSqrt()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     3.65%  program  libm.so.6          [.] 0x00000000000a542e
+            |
+            ---0x7422ee97f42e
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     2.92%  program  [kernel.kallsyms]  [k] handle_softirqs
+            |
+            ---handle_softirqs
+               __irq_exit_rcu
+               irq_exit_rcu
+               |          
+               |--1.46%--sysvec_apic_timer_interrupt
+               |          asm_sysvec_apic_timer_interrupt
+               |          |          
+               |          |--0.73%--0x7422ee97f428
+               |          |          calculateSin()
+               |          |          processData()
+               |          |          main
+               |          |          0x7422ee62a601
+               |          |          __libc_start_main
+               |          |          _start
+               |          |          
+               |           --0.73%--0x7422ee97f2eb
+               |                     calculateSin()
+               |                     processData()
+               |                     main
+               |                     0x7422ee62a601
+               |                     __libc_start_main
+               |                     _start
+               |          
+                --1.46%--common_interrupt
+                          asm_common_interrupt
+                          |          
+                          |--0.73%--0x7422eeccbe70
+                          |          0x7422eeccc7ac
+                          |          0x7422eecd1051
+                          |          0x7422eecd4581
+                          |          0x7422eece65c3
+                          |          0x7422eece2dc6
+                          |          0x7422eece44e1
+                          |          0x7422eece3348
+                          |          
+                           --0.73%--sin@plt
+                                     processData()
+                                     main
+                                     0x7422ee62a601
+                                     __libc_start_main
+                                     _start
+
+     2.92%  program  libm.so.6          [.] f32xsqrtf64
+            |
+            ---f32xsqrtf64
+               calculateSqrt()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     2.92%  program  program            [.] sin@plt
+            |
+            ---sin@plt
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     2.19%  program  libm.so.6          [.] 0x00000000000a52eb
+            |
+            ---0x7422ee97f2eb
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     2.19%  program  libm.so.6          [.] 0x00000000000a5436
+            |
+            ---0x7422ee97f436
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     2.19%  program  libm.so.6          [.] 0x00000000000a55b6
+            |
+            ---0x7422ee97f5b6
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     2.19%  program  libm.so.6          [.] 0x00000000000a55bb
+            |
+            ---0x7422ee97f5bb
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     1.46%  program  [e1000]            [k] 0x00000000000020d9
+            |
+            ---0xffffffffc02940d9
+               __napi_poll
+               net_rx_action
+               handle_softirqs
+               __irq_exit_rcu
+               irq_exit_rcu
+               |          
+               |--0.73%--sysvec_apic_timer_interrupt
+               |          asm_sysvec_apic_timer_interrupt
+               |          0x7422ee97f432
+               |          calculateSin()
+               |          processData()
+               |          main
+               |          0x7422ee62a601
+               |          __libc_start_main
+               |          _start
+               |          
+                --0.73%--common_interrupt
+                          asm_common_interrupt
+                          0x7422ee97f41a
+                          calculateSin()
+                          processData()
+                          main
+                          0x7422ee62a601
+                          __libc_start_main
+                          _start
+
+     1.46%  program  libm.so.6          [.] 0x00000000000a5054
+            |
+            ---0x7422ee97f054
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     1.46%  program  libm.so.6          [.] 0x00000000000a52d8
+            |
+            ---0x7422ee97f2d8
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     1.46%  program  libm.so.6          [.] 0x00000000000a5428
+            |
+            ---0x7422ee97f428
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     1.46%  program  libm.so.6          [.] 0x00000000000a556e
+            |
+            ---0x7422ee97f56e
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     1.46%  program  libm.so.6          [.] 0x00000000000a55c5
+            |
+            ---0x7422ee97f5c5
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  [e1000]            [k] 0x00000000000020cf
+            |
+            ---0xffffffffc02940cf
+               __napi_poll
+               net_rx_action
+               handle_softirqs
+               __irq_exit_rcu
+               irq_exit_rcu
+               common_interrupt
+               asm_common_interrupt
+               0x7422ee97f5bb
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  [kernel.kallsyms]  [k] irqentry_exit
+            |
+            ---irqentry_exit
+               sysvec_call_function_single
+               asm_sysvec_call_function_single
+               0x7422ee97f5aa
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a5058
+            |
+            ---0x7422ee97f058
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a505c
+            |
+            ---0x7422ee97f05c
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a5070
+            |
+            ---0x7422ee97f070
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a5080
+            |
+            ---0x7422ee97f080
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a50c9
+            |
+            ---0x7422ee97f0c9
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a50d0
+            |
+            ---0x7422ee97f0d0
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a50d2
+            |
+            ---0x7422ee97f0d2
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a50d7
+            |
+            ---0x7422ee97f0d7
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a51ed
+            |
+            ---0x7422ee97f1ed
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a52ef
+            |
+            ---0x7422ee97f2ef
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a52f8
+            |
+            ---0x7422ee97f2f8
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a5331
+            |
+            ---0x7422ee97f331
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a5354
+            |
+            ---0x7422ee97f354
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a5358
+            |
+            ---0x7422ee97f358
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a5367
+            |
+            ---0x7422ee97f367
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a53c5
+            |
+            ---0x7422ee97f3c5
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a5402
+            |
+            ---0x7422ee97f402
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a543a
+            |
+            ---0x7422ee97f43a
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a5518
+            |
+            ---0x7422ee97f518
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a5520
+            |
+            ---0x7422ee97f520
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a552b
+            |
+            ---0x7422ee97f52b
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a553f
+            |
+            ---0x7422ee97f53f
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a5543
+            |
+            ---0x7422ee97f543
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a5577
+            |
+            ---0x7422ee97f577
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a55aa
+            |
+            ---0x7422ee97f5aa
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  libm.so.6          [.] 0x00000000000a56a6
+            |
+            ---0x7422ee97f6a6
+               calculateSin()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+     0.73%  program  program            [.] sqrt@plt
+            |
+            ---sqrt@plt
+               calculateSqrt()
+               processData()
+               main
+               0x7422ee62a601
+               __libc_start_main
+               _start
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

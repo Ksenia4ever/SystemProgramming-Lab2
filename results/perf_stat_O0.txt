@@ -1,0 +1,27 @@
+Result: 6.66667e+11
+Time: 4.15907 s
+
+ Performance counter stats for '/home/ken/lab2/program_O0':
+
+          4,161.78 msec task-clock                       #    0.997 CPUs utilized             
+                17      context-switches                 #    4.085 /sec                      
+                 0      cpu-migrations                   #    0.000 /sec                      
+               134      page-faults                      #   32.198 /sec                      
+    11,996,860,085      cycles                           #    2.883 GHz                         (39.99%)
+     6,408,587,677      stalled-cycles-frontend          #   53.42% frontend cycles idle        (40.01%)
+     1,750,890,408      stalled-cycles-backend           #   14.59% backend cycles idle         (40.03%)
+    16,716,237,243      instructions                     #    1.39  insn per cycle            
+                                                  #    0.38  stalled cycles per insn     (50.02%)
+     2,354,666,161      branches                         #  565.784 M/sec                       (50.03%)
+           601,082      branch-misses                    #    0.03% of all branches             (50.01%)
+     4,144,371,000      L1-dcache-loads                  #  995.817 M/sec                       (49.99%)
+           413,888      L1-dcache-load-misses            #    0.01% of all L1-dcache accesses   (49.98%)
+            26,487      LLC-loads                        #    6.364 K/sec                       (39.98%)
+               605      LLC-load-misses                  #    2.28% of all LL-cache accesses    (39.98%)
+
+       4.172380403 seconds time elapsed
+
+       4.161847000 seconds user
+       0.001000000 seconds sys
+
+
